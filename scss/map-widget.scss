@@ -1,0 +1,236 @@
+@import './b-mixins';
+
+.map-widget {
+  overflow: hidden;
+  background: url(../assets/map-widget/map-widget-bg.jpg) center / cover no-repeat;
+
+  &__container {
+    max-width: 1400px;
+    padding: 0 40px;
+    margin: 0 auto;
+
+    @include laptop {
+      padding: 0 15px;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  &__map {
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+    margin: 0;
+
+    &-image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__cards {
+  }
+
+  &__card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    max-width: 2.4%;
+    width: 100%;
+    aspect-ratio: 1;
+    transform: translate3d(-50%, -50%, 0);
+
+    @include laptop {
+      transform: none;
+    }
+
+    &.active {
+      @include laptop {
+        position: absolute;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        z-index: 100;
+        max-width: none !important;
+        aspect-ratio: initial;
+        transform: none;
+      }
+    }
+
+    &[data-area='krasnodarskij'] {
+      top: 73.88%;
+      left: 17.13%;
+    }
+
+    &[data-area='adygeya'] {
+      top: 77%;
+      left: 18.24%;
+    }
+
+    &[data-area='stavropolskij'] {
+      top: 77%;
+      left: 22.69%;
+    }
+
+    &[data-area='kabardino-balkarskaya'] {
+      top: 82%;
+      left: 23.17%;
+    }
+
+    &[data-area='krym'] {
+      top: 70.37%;
+      left: 8.61%;
+    }
+
+    &[data-area='rostovskaya'] {
+      top: 68.71%;
+      left: 21.57%;
+    }
+
+    &[data-area='kurskaya'] {
+      top: 53.61%;
+      left: 18.8%;
+    }
+
+    &[data-area='dagestan'] {
+      top: 88.4%;
+      left: 30.83%;
+    }
+
+    &[data-area='ingushetiya'] {
+      top: 84.21%;
+      left: 27.13%;
+    }
+
+    &[data-area='tambovskaya'] {
+      top: 55.75%;
+      left: 29.35%;
+    }
+
+    &[data-area='lipeckaya'] {
+      top: 54%;
+      left: 26.02%;
+    }
+
+    &[data-area='vladimirskaya'] {
+      top: 45.42%;
+      left: 31.94%;
+    }
+
+    &[data-area='orenburgskaya'] {
+      top: 63.55%;
+      left: 46.3%;
+    }
+
+    &[data-area='voronezhskaya'] {
+      top: 61.21%;
+      left: 24.91%;
+    }
+
+    &[data-area='volgogradskaya'] {
+      top: 64.13%;
+      left: 30.65%;
+    }
+
+    &[data-area='kaliningradskaya'] {
+      top: 34.18%;
+      left: 3.81%;
+    }
+
+    &[data-area='kazahstan'] {
+      top: 63.94%;
+      left: 65.74%;
+      max-width: 4.5%;
+    }
+
+    &[data-area='kyrgyzskaya'] {
+      top: 88.01%;
+      left: 73.8%;
+    }
+
+    &[data-area='osetiya'] {
+      top: 84.5%;
+      left: 24.91%;
+    }
+
+    &-layout {
+      display: none;
+
+      @include laptop {
+        position: fixed;
+        inset: 0;
+        z-index: 99;
+      }
+    }
+
+    &.active &-layout {
+      display: block;
+    }
+
+    &-point {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 64px;
+      background-color: rgba($color: red, $alpha: 0);
+      cursor: pointer;
+
+      @include laptop {
+        transform: translate3d(-50%, -50%, 0);
+      }
+    }
+
+    &.active &-point {
+      @include laptop {
+        display: none;
+      }
+    }
+
+    &-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 100;
+      width: max-content;
+      padding: 10px 20px;
+      box-sizing: border-box;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 100%;
+      color: #0e1d2f;
+      border-radius: 3px;
+      background-color: #ffffff;
+      opacity: 0;
+      pointer-events: none;
+
+      @media screen and (min-width: 1024.1px) {
+        transition: opacity ease-out 0.2s;
+      }
+    }
+
+    &:has(&-point:hover) &-label,
+    &-label:hover {
+      @media screen and (min-width: 1024.1px) {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    &.active &-label {
+      @include laptop {
+        top: 15px;
+        left: 0;
+        z-index: 199;
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+}

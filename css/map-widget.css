@@ -1,0 +1,215 @@
+.map-widget {
+  overflow: hidden;
+  background: url(../assets/map-widget/map-widget-bg.jpg) center/cover no-repeat;
+}
+.map-widget__container {
+  max-width: 1400px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+@media (max-width: 1024px) {
+  .map-widget__container {
+    padding: 0 15px;
+  }
+}
+.map-widget__wrapper {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+.map-widget__map {
+  position: relative;
+  z-index: 1;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0;
+}
+.map-widget__map-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.map-widget__card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  max-width: 2.4%;
+  width: 100%;
+  aspect-ratio: 1;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+}
+@media (max-width: 1024px) {
+  .map-widget__card {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+@media (max-width: 1024px) {
+  .map-widget__card.active {
+    position: absolute;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 100;
+    max-width: none !important;
+    aspect-ratio: initial;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+.map-widget__card[data-area=krasnodarskij] {
+  top: 73.88%;
+  left: 17.13%;
+}
+.map-widget__card[data-area=adygeya] {
+  top: 77%;
+  left: 18.24%;
+}
+.map-widget__card[data-area=stavropolskij] {
+  top: 77%;
+  left: 22.69%;
+}
+.map-widget__card[data-area=kabardino-balkarskaya] {
+  top: 82%;
+  left: 23.17%;
+}
+.map-widget__card[data-area=krym] {
+  top: 70.37%;
+  left: 8.61%;
+}
+.map-widget__card[data-area=rostovskaya] {
+  top: 68.71%;
+  left: 21.57%;
+}
+.map-widget__card[data-area=kurskaya] {
+  top: 53.61%;
+  left: 18.8%;
+}
+.map-widget__card[data-area=dagestan] {
+  top: 88.4%;
+  left: 30.83%;
+}
+.map-widget__card[data-area=ingushetiya] {
+  top: 84.21%;
+  left: 27.13%;
+}
+.map-widget__card[data-area=tambovskaya] {
+  top: 55.75%;
+  left: 29.35%;
+}
+.map-widget__card[data-area=lipeckaya] {
+  top: 54%;
+  left: 26.02%;
+}
+.map-widget__card[data-area=vladimirskaya] {
+  top: 45.42%;
+  left: 31.94%;
+}
+.map-widget__card[data-area=orenburgskaya] {
+  top: 63.55%;
+  left: 46.3%;
+}
+.map-widget__card[data-area=voronezhskaya] {
+  top: 61.21%;
+  left: 24.91%;
+}
+.map-widget__card[data-area=volgogradskaya] {
+  top: 64.13%;
+  left: 30.65%;
+}
+.map-widget__card[data-area=kaliningradskaya] {
+  top: 34.18%;
+  left: 3.81%;
+}
+.map-widget__card[data-area=kazahstan] {
+  top: 63.94%;
+  left: 65.74%;
+  max-width: 4.5%;
+}
+.map-widget__card[data-area=kyrgyzskaya] {
+  top: 88.01%;
+  left: 73.8%;
+}
+.map-widget__card[data-area=osetiya] {
+  top: 84.5%;
+  left: 24.91%;
+}
+.map-widget__card-layout {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .map-widget__card-layout {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+  }
+}
+.map-widget__card.active .map-widget__card-layout {
+  display: block;
+}
+.map-widget__card-point {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 64px;
+  background-color: rgba(255, 0, 0, 0);
+  cursor: pointer;
+}
+@media (max-width: 1024px) {
+  .map-widget__card-point {
+    -webkit-transform: translate3d(-50%, -50%, 0);
+            transform: translate3d(-50%, -50%, 0);
+  }
+}
+@media (max-width: 1024px) {
+  .map-widget__card.active .map-widget__card-point {
+    display: none;
+  }
+}
+.map-widget__card-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 10px 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  color: #0e1d2f;
+  border-radius: 3px;
+  background-color: #ffffff;
+  opacity: 0;
+  pointer-events: none;
+}
+@media screen and (min-width: 1024.1px) {
+  .map-widget__card-label {
+    -webkit-transition: opacity ease-out 0.2s;
+    transition: opacity ease-out 0.2s;
+  }
+}
+@media screen and (min-width: 1024.1px) {
+  .map-widget__card:has(.map-widget__card-point:hover) .map-widget__card-label, .map-widget__card-label:hover {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+@media (max-width: 1024px) {
+  .map-widget__card.active .map-widget__card-label {
+    top: 15px;
+    left: 0;
+    z-index: 199;
+    opacity: 1;
+    pointer-events: all;
+  }
+}
