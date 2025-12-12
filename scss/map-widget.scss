@@ -41,7 +41,7 @@
     top: 0;
     left: 0;
     z-index: 20;
-    max-width: 2.4%;
+    max-width: 3.6%;
     width: 100%;
     aspect-ratio: 1;
     transform: translate3d(-50%, -50%, 0);
@@ -82,6 +82,7 @@
     &[data-area='kabardino-balkarskaya'] {
       top: 82%;
       left: 23.17%;
+      max-width: 3%;
     }
 
     &[data-area='krym'] {
@@ -107,6 +108,8 @@
     &[data-area='ingushetiya'] {
       top: 84.21%;
       left: 27.13%;
+      max-width: 3%;
+
     }
 
     &[data-area='tambovskaya'] {
@@ -158,6 +161,7 @@
     &[data-area='osetiya'] {
       top: 84.5%;
       left: 24.91%;
+      max-width: 3%;
     }
 
     &-layout {
@@ -179,7 +183,7 @@
       width: 100%;
       aspect-ratio: 1;
       border-radius: 64px;
-      background-color: rgba($color: red, $alpha: 0);
+      // background-color: rgba($color: red, $alpha: 0.5);
       cursor: pointer;
 
       @include laptop {

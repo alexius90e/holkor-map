@@ -37,7 +37,7 @@
   top: 0;
   left: 0;
   z-index: 20;
-  max-width: 2.4%;
+  max-width: 3.6%;
   width: 100%;
   aspect-ratio: 1;
   -webkit-transform: translate3d(-50%, -50%, 0);
@@ -78,6 +78,7 @@
 .map-widget__card[data-area=kabardino-balkarskaya] {
   top: 82%;
   left: 23.17%;
+  max-width: 3%;
 }
 .map-widget__card[data-area=krym] {
   top: 70.37%;
@@ -98,6 +99,7 @@
 .map-widget__card[data-area=ingushetiya] {
   top: 84.21%;
   left: 27.13%;
+  max-width: 3%;
 }
 .map-widget__card[data-area=tambovskaya] {
   top: 55.75%;
@@ -139,6 +141,7 @@
 .map-widget__card[data-area=osetiya] {
   top: 84.5%;
   left: 24.91%;
+  max-width: 3%;
 }
 .map-widget__card-layout {
   display: none;
@@ -158,7 +161,6 @@
   width: 100%;
   aspect-ratio: 1;
   border-radius: 64px;
-  background-color: rgba(255, 0, 0, 0);
   cursor: pointer;
 }
 @media (max-width: 1024px) {
