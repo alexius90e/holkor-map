@@ -1,6 +1,6 @@
 .map-widget {
   overflow: hidden;
-  background: url(../assets/map-widget/map-widget-bg.jpg) center/cover no-repeat;
+  background: url(../assets/map-widget/map-widget-bg.webp) center/cover no-repeat;
 }
 .map-widget__container {
   max-width: 1400px;
@@ -31,6 +31,9 @@
   display: block;
   max-width: 100%;
   height: auto;
+}
+.map-widget__cards {
+  display: block;
 }
 .map-widget__card {
   position: absolute;

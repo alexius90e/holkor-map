@@ -2,7 +2,7 @@
 
 .map-widget {
   overflow: hidden;
-  background: url(../assets/map-widget/map-widget-bg.jpg) center / cover no-repeat;
+  background: url(../assets/map-widget/map-widget-bg.webp) center / cover no-repeat;
 
   &__container {
     max-width: 1400px;
@@ -34,6 +34,7 @@
   }
 
   &__cards {
+    display: block;
   }
 
   &__card {
